@@ -1,10 +1,10 @@
 package com.example.shivam.memorymap;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -18,7 +18,7 @@ public class Memorymap extends AppCompatActivity {
     TextView tv1;
     int count=0;
     int movcount=0;
-    int tempnum;
+    int tempnum,tempnum2;
    thelistener xx=new thelistener();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +56,31 @@ public class Memorymap extends AppCompatActivity {
           rst.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-             finish();
-             System.exit(0);
+                Button at=a[10];
+                a[10]=a[0];
+                a[0]=at;
+                if(a[0].isEnabled()&&!a[10].isEnabled()){
+                    a[0].setEnabled(false);
+                    a[10].setEnabled(true);
+                    a[10].setBackgroundResource(R.drawable.images);
+                    a[0].setText(":)");
+                    a[10].setText("");
+                    a[0].setBackgroundResource(0);;
+                }
+
+                if(!a[0].isEnabled()&&a[10].isEnabled()){
+                    a[10].setEnabled(false);
+                    a[0].setEnabled(true);
+                    a[10].setBackgroundResource(R.drawable.images);
+                    a[10].setText(":)");
+                    a[0].setText("");
+                    a[0].setBackgroundColor(0);
+
+                }
+
+
+                //    finish();
+         //    System.exit(0);
             }});
 
     }
@@ -67,25 +90,30 @@ public class Memorymap extends AppCompatActivity {
         public void onClick(View v){
             movcount++;
             temp1=temp;
-            temp=(Button)findViewById(v.getId());
+            temp = (Button)findViewById(v.getId());
             for (int i=0;i<16;i++) {
-                if(temp==a[i]&& temp!=temp1) {
+                if(temp==a[i]) {
                     temp.setText(av[i] + "");
-                    if (movcount > 1 ) {
-                        if (tempnum == av[i] ) {
-                            temp.setBackgroundColor(0xff5500ff);
-                            temp1.setBackgroundColor(0xff5500ff);
-                            temp.setText(":)");
-                            temp1.setText(":)");
-                            temp.setEnabled(false);
-                            temp1.setEnabled(false);
-                            if (++count == 8) {
-                                for (Button b : a) b.setVisibility(View.INVISIBLE);
-                                tv1.setText("you win! completed in" + movcount + "moves");
-                            }
-                        } else
+                    if(temp!=temp1){
+                        if (movcount > 1) {
+                            if (tempnum == av[i] && !(tempnum2==i)) {
+                                temp.setBackgroundResource(R.drawable.images);
+                                temp1.setBackgroundResource(R.drawable.images);
+                                temp.setText(":)");
+                                temp1.setText(":)");
+                                temp.setEnabled(false);
+                                temp1.setEnabled(false);
+                                if (++count == 8) {
+                                     for (Button b : a) b.setVisibility(View.INVISIBLE);
+                                     tv1.setText("you win! completed in" + movcount + "moves");
+                                     //tv1.setText("you win! completed in 16 moves");
+                                }
+                            } else
                             temp1.setText("");
-                    }tempnum=av[i];
+                        }
+                        tempnum = av[i];
+                        tempnum2 = i;
+                    }
                 }
 
 

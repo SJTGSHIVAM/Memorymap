@@ -4,28 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="#00000f"
     tools:context="com.example.shivam.memorymap.Memorymap">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="156dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="83dp"
-        android:orientation="vertical"
+    <TableLayout
+        android:layout_width="274dp"
+        android:layout_height="274dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.563"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.226">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+
+        <TableRow>
 
             <Button
                 android:id="@+id/a0"
@@ -58,12 +55,10 @@
                 android:elevation="0dp"
                 tools:layout_editor_absoluteX="242dp"
                 tools:layout_editor_absoluteY="233dp" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        </TableRow>
+
+        <TableRow>
 
             <Button
                 android:id="@+id/a4"
@@ -96,13 +91,9 @@
                 android:elevation="0dp"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="154dp" />
+        </TableRow>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <TableRow>
 
             <Button
                 android:id="@+id/a8"
@@ -121,14 +112,6 @@
                 tools:layout_editor_absoluteY="86dp" />
 
             <Button
-                android:id="@+id/a10"
-                android:layout_width="68dp"
-                android:layout_height="68dp"
-                android:elevation="0dp"
-                tools:layout_editor_absoluteX="242dp"
-                tools:layout_editor_absoluteY="16dp" />
-
-            <Button
                 android:id="@+id/a11"
                 android:layout_width="68dp"
                 android:layout_height="68dp"
@@ -136,12 +119,6 @@
                 tools:layout_editor_absoluteX="158dp"
                 tools:layout_editor_absoluteY="16dp" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/a12"
@@ -150,6 +127,9 @@
                 android:elevation="0dp"
                 tools:layout_editor_absoluteX="84dp"
                 tools:layout_editor_absoluteY="86dp" />
+        </TableRow>
+
+        <TableRow>
 
             <Button
                 android:id="@+id/a13"
@@ -174,9 +154,20 @@
                 android:elevation="0dp"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="6dp" />
-        </LinearLayout>
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/a10"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:elevation="0dp"
+                tools:layout_editor_absoluteX="200dp"
+                tools:layout_editor_absoluteY="287dp" />
+        </TableRow>
+
+    </TableLayout>
 
     <TextView
         android:id="@+id/textView"
@@ -190,7 +181,6 @@
         android:text="try  taping"
         android:textColor="#ff0000"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -199,17 +189,14 @@
         android:id="@+id/dpl"
         android:layout_width="262dp"
         android:layout_height="37dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="116dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:text=" "
         android:textColor="@android:color/holo_blue_bright"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/rst"
