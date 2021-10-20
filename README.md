@@ -1,1 +1,1 @@
-This is a simple memory game that you can enjoy.
+This is a simple memory game that you can play and have fun.
